@@ -21,18 +21,19 @@
 12. Place all the objects from your pick list in their respective dropoff box and you have completed the challenge!
 13. Looking for a bigger challenge?  Load up the `challenge.world` scenario and see if you can get your perception pipeline working there!
 
+
 [//]: # (Image References)
 
-[image1]: ./misc_images/pr2_worldpoints
-[image2]: ./misc_images/statistical_filtered
-[image3]: ./misc_images/passthrough_filtered
-[image4]: ./misc_images/pcl_table
-[image5]: ./misc_images/pcl_objects
-[image6]: ./misc_images/pcl_cluster
-[image7]: ./misc_images/pcl_cluster_camera_1
-[image8]: ./misc_images/normalized_confusion_matrix
-[image9]: ./misc_images/pcl_cluster_camera_2
-[image10]: ./misc_images/pcl_cluster_camera_3
+[image1]: ./misc_images/pr2_worldpoints.png
+[image2]: ./misc_images/statistical_filtered.png
+[image3]: ./misc_images/passthrough_filtered.png
+[image4]: ./misc_images/pcl_table.png
+[image5]: ./misc_images/pcl_objects.png
+[image6]: ./misc_images/pcl_cluster.png
+[image7]: ./misc_images/pcl_cluster_camera_1.png
+[image8]: ./misc_images/normalized_confusion_matrix.png
+[image9]: ./misc_images/pcl_cluster_camera_2.png
+[image10]: ./misc_images/pcl_cluster_camera_3.png
 
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/1067/view) Points
@@ -111,7 +112,7 @@ The following is a snapshot of the camera view of RViz:
 `
 - Modified `"models"` in `src/sensor_stick/scripts/capture_features.py` to include the above list of the labels.  Also specified the number of random poses to be generated for each object to be 20.
 - Ran `roslaunch sensor_stick training.launch` and then `rosrun sensor_stick capture_features.py` from `~/catkin_ws` and in separate terminals to generate training data for the SVM. The output of this training step is file `~/catkin_ws/training_set.sav`.
-- To train the SVM model with the training data, ran `rosrun sensor_stick train_svm.py in `~/catkin_ws`. The output SVM model is stored in `~/catkin_ws/model.sav`.
+- To train the SVM model with the training data, ran `rosrun sensor_stick train_svm.py` in `~/catkin_ws`. The output SVM model is stored in `~/catkin_ws/model.sav`.
 - The model's classifier is then used during pick and place to classify the point cloud of each of the object clusters in a scene.
 - The features that are used/extracted for the object clusters, both during training and classification, are a concatenation of HSV color_histograms and normal_histograms.
 - Feature extraction for the above is done by methods in script `~/catkin_ws/src/sensor_stick/src/sensor_stick/features.py`, and I used the following parameters for color and normals:
